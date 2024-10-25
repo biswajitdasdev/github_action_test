@@ -12,17 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: List Files
-        run: ls -la
+      - name: Making Script Executable
+        run: chmod +x scripts/shell.sh
 
-      - name: Show system info
-        run: |
-          echo "Repository: $GITHUB_REPOSITORY"
-          echo "Operating System: $(uname -a)"
-          echo "Current Directory: ${pwd}"
-
-      - name: Check Versions
-        run: |
-          echo "Node version: $(node --version)"
-          echo "Python version: $(python --version)"
-          echo "Git version: $(git --version )"
+      - name: run script
+        run: ./scripts/shell.sh
